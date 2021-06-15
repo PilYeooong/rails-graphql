@@ -1,1 +1,0 @@
-GraphiQL::Rails.config.headers['Authorization'] = -> (context) { "bearer eyJhbGciOiJIUzUxMiJ9.eyJkYXRhIjp7Im5pY2tuYW1lIjoibWF4IiwidXNlcl9pZCI6MX0sImV4cCI6MTYzMTUxOTM2NywiaWF0IjoxNjIzNzQzMzY3LCJpc3MiOiJyYWlsc3FsIn0.GX2Hx40hCZl-P3QXQArUDHYa2PUItfmRNKtaSDEmorUDZ1_cEwaLFjayX2pOlGoi580Yl9D2ygBISSJ1T4pobQ" }
