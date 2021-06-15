@@ -4,6 +4,8 @@ module Resolvers
       type [Types::UserType], null: false
 
       def resolve
+        check_current_user!
+
         User.all
       end
     end

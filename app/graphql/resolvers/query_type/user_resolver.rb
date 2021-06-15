@@ -6,6 +6,8 @@ module Resolvers
       argument :user_id, ID, required: true
 
       def resolve(user_id:)
+        check_current_user!
+
         user = User.find(user_id)
 
         {

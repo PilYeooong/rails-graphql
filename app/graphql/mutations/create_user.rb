@@ -1,5 +1,5 @@
 class Mutations::CreateUser < Mutations::BaseMutation
-  type Types::UserType
+  field :user, Types::UserType, null: false
 
   argument :user, Types::CreateUserType, required: true
 
@@ -12,15 +12,11 @@ class Mutations::CreateUser < Mutations::BaseMutation
       user = User.create!(email: email, password: password, nickname: nickname)
 
     rescue Exception => e
-      pp e
-      {
-        error: e.full_message
-      }
+      raise Errors::gql_error!(Errors::INVALID_REQUEST, e)
     end
 
     {
-      email: user.email,
-      nickname: user.nickname
+      user: user
     }
   end
 end
