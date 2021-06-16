@@ -8,13 +8,10 @@ module Resolvers
       def resolve(user_id:)
         check_current_user!
 
-        user = User.find(user_id)
+        find_user = User.find(user_id)
 
         {
-          email: user.email,
-          nickname: user.nickname,
-          profile: user.profile,
-          created_at: user.created_at
+          user: find_user
         }
       end
     end

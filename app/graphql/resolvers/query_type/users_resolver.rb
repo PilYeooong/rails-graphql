@@ -7,6 +7,7 @@ module Resolvers
         check_current_user!
 
         User.all
+
       end
     end
   end
